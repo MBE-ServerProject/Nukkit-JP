@@ -12,7 +12,6 @@ import cn.nukkit.math.AxisAlignedBB;
 import cn.nukkit.math.BlockFace;
 import cn.nukkit.utils.BlockColor;
 
-
 /**
  * Created by Pub4Game on 26.12.2015.
  */
@@ -47,18 +46,13 @@ public class BlockTrapdoorIron extends BlockTrapdoor {
     }
 
     @Override
-    public int getToolType() {
-        return ItemTool.TYPE_PICKAXE;
-    }
-
-    @Override
-    public BlockColor getColor() {
-        return BlockColor.IRON_BLOCK_COLOR;
-    }
-
-    @Override
     public boolean canBeActivated() {
         return true;
+    }
+
+    @Override
+    public int getToolType() {
+        return ItemTool.TYPE_PICKAXE;
     }
 
     @Override
@@ -184,6 +178,11 @@ public class BlockTrapdoorIron extends BlockTrapdoor {
         return true;
     }
 
+	@Override
+    public BlockColor getColor() {
+        return BlockColor.IRON_BLOCK_COLOR;
+    }
+	
     public boolean toggle(Player player) {
         DoorToggleEvent event = new DoorToggleEvent(this, player);
         this.getLevel().getServer().getPluginManager().callEvent(event);

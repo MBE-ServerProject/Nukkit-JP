@@ -55,7 +55,7 @@ public class BlockStandingBanner extends BlockSolid {
         return false;
     }
 	
-	  @Override
+	@Override
     public BlockColor getColor() {
         return DyeColor.getByWoolData(meta).getColor();
     }
