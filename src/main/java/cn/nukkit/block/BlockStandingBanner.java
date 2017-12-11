@@ -3,6 +3,7 @@ package cn.nukkit.block;
 import cn.nukkit.item.Item;
 import cn.nukkit.item.ItemTool;
 import cn.nukkit.utils.BlockColor;
+import cn.nukkit.utils.DyeColor;
 
 /**
  * author: meare
@@ -19,35 +20,25 @@ public class BlockStandingBanner extends BlockSolid {
         super(meta);
     }
 	
+	public BlockStandingBanner(DyeColor dyeColor) {
+		this(dyeColor.getWoolData());
+    }
 
+	@Override
+    public String getName() {
+        return getDyeColor().getName() + " Standing Banner";
+    }	
+	
     @Override
     public int getId() {
         return STANDING_BANNER;
     }
 	
-    public BlockStandingBanner(DyeColor dyeColor) {
-        this(dyeColor.getWoolData());
-    }
-
-    @Override
-    public String getName() {
-        return getDyeColor().getName() + " Standing Banner";
-    }
-	
-    @Override
-    public BlockColor getColor() {
-        return DyeColor.getByWoolData(meta).getColor();
-    }
-
-    public DyeColor getDyeColor() {
-        return DyeColor.getByWoolData(meta);
-    }
-
     @Override
     public int getToolType() {
         return ItemTool.TYPE_AXE;
-    }
-
+    }		
+	
     @Override
     public double getHardness() {
         return 3;
@@ -63,4 +54,14 @@ public class BlockStandingBanner extends BlockSolid {
     public boolean canHarvestWithHand() {
         return false;
     }
+	
+	  @Override
+    public BlockColor getColor() {
+        return DyeColor.getByWoolData(meta).getColor();
+    }
+
+    public DyeColor getDyeColor() {
+        return DyeColor.getByWoolData(meta);
+    }
+
 }
