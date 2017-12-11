@@ -92,11 +92,11 @@ Build JAR file（jarファイルの生成方法）
 
 -------------
 
-1. このリポジトリをCloneします。
-1. Cloneしたフォルダのパスで、以下のコマンドを順に入力していきます。
-	1 `git submodule update --init`
-	2 `mvn clean`
-	3 `mvn package`
+- このリポジトリをCloneします。
+- Cloneしたフォルダのパスで、以下のコマンドを順に入力していきます。
+    * `git submodule update --init`
+    * `mvn clean`
+    * `mvn package`
 
 
 Running（実行）
@@ -106,17 +106,17 @@ Simply run `start.sh` or `start.cmd`, or execute `java -jar Nukkit.jar`.
 --------------------
 
 * Windowsの場合
-	1 jarファイルのあるフォルダに`start.cmd`を作り、そこに`java -jar Nukkit.jar`と記述し保存します。
-	2 作成した`start.cmd`を実行します。
+	- jarファイルのあるフォルダに`start.cmd`を作り、そこに`java -jar Nukkit.jar`と記述し保存します。
+	- 作成した`start.cmd`を実行します。
 * Linuxの場合
-	1 jarファイルのあるフォルダに`start.sh`を作り、そこに`java -jar Nukkit.jar`と記述し保存します。
-	2 作成した`start.sh`を実行します。
+	- jarファイルのあるフォルダに`start.sh`を作り、そこに`java -jar Nukkit.jar`と記述し保存します。
+	- 作成した`start.sh`を実行します。
 * その他・実行ファイルを使用しない場合
-	* jarファイルのあるフォルダのパスで、`java -jar Nukkit.jar`というコマンドを実行します。
+	- jarファイルのあるフォルダのパスで、`java -jar Nukkit.jar`というコマンドを実行します。
 
 Plugin API（プラグインのAPI）
 -------------
-#### **Example Plugin（プラグインの例）**
+#### **Example Plugin（プラグイン例）**
 Example Plugin which shows the API of Nukkit.
 NukkitのAPI使用の一例が掲載されています（Nukkit-JPのものではありません）。
 
