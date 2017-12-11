@@ -134,7 +134,6 @@ Contributing（開発協力）
 ------------
 Please read the [CONTRIBUTING](https://github.com/Nukkit/Nukkit/blob/jp/.github/CONTRIBUTING.md) guide before submitting any issue. Issues with insufficient information or in the wrong format will be closed and will not be reviewed.
 
---------------------
 
 [こちら](https://github.com/Nukkit/Nukkit/blob/jp/.github/CONTRIBUTING.md) を参照してバグなどの報告をお願いいたします。なお、不十分な情報だけの報告は参考にすることができません。ご了承ください。
 
