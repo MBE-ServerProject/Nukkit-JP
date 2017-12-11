@@ -265,6 +265,9 @@ public abstract class Block extends Position implements Metadatable, Cloneable {
     public static final int PACKED_ICE = 174;
     public static final int DOUBLE_PLANT = 175;
 
+	public static final int STANDING_BANNER = 176;
+	public static final int WALL_BANNER = 177;
+		
     public static final int DAYLIGHT_DETECTOR_INVERTED = 178;
     public static final int RED_SANDSTONE = 179;
     public static final int RED_SANDSTONE_STAIRS = 180;
@@ -275,7 +278,7 @@ public abstract class Block extends Position implements Metadatable, Cloneable {
     public static final int FENCE_GATE_JUNGLE = 185;
     public static final int FENCE_GATE_DARK_OAK = 186;
     public static final int FENCE_GATE_ACACIA = 187;
-
+	
     public static final int SPRUCE_DOOR_BLOCK = 193;
     public static final int BIRCH_DOOR_BLOCK = 194;
     public static final int JUNGLE_DOOR_BLOCK = 195;
