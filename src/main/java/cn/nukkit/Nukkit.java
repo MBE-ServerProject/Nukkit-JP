@@ -90,7 +90,7 @@ public class Nukkit {
         }
 
         MainLogger logger = new MainLogger(DATA_PATH + "server.log", logLevel);
-        System.out.printf("Using log level '%s'\n", logLevel);
+        //System.out.printf("Using log level '%s'\n", logLevel);
 
         try {
             if (ANSI) {
