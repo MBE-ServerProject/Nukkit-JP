@@ -222,7 +222,7 @@ public class Server {
         //todo: VersionString 现在不必要
 
         if (!new File(this.dataPath + "nukkit.yml").exists()) {
-            this.getLogger().info(TextFormat.GREEN + "Welcome! Please choose a language first!");
+            this.getLogger().info(TextFormat.GREEN + "ようこそ！まずはじめに言語を選択してください。 Select languages");
             try {
                 String[] lines = Utils.readFile(this.getClass().getClassLoader().getResourceAsStream("lang/language.list")).split("\n");
                 for (String line : lines) {
@@ -257,14 +257,14 @@ public class Server {
 
         this.console.start();
 
-        this.logger.info("Loading " + TextFormat.GREEN + "nukkit.yml" + TextFormat.WHITE + "...");
+        this.logger.info(TextFormat.GREEN + "nukkit.ymlを読み込んでいます...");
         this.config = new Config(this.dataPath + "nukkit.yml", Config.YAML);
 
-        this.logger.info("Loading " + TextFormat.GREEN + "server properties" + TextFormat.WHITE + "...");
+        this.logger.info(TextFormat.GREEN + "サーバー設定を読み込んでいます...");
         this.properties = new Config(this.dataPath + "server.properties", Config.PROPERTIES, new ConfigSection() {
             {
-                put("motd", "Nukkit Server For Minecraft: PE");
-                put("sub-motd", "Powered by Nukkit");
+                put("motd", "Nukkit Server For Minecraft: BE");
+                put("sub-motd", "Powered by Nukkit-JP");
                 put("server-port", 19132);
                 put("server-ip", "0.0.0.0");
                 put("view-distance", 10);

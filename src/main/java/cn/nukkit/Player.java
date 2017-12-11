@@ -285,7 +285,7 @@ public class Player extends EntityHuman implements CommandSender, InventoryHolde
     public void setBanned(boolean value) {
         if (value) {
             this.server.getNameBans().addBan(this.getName(), null, null, null);
-            this.kick(PlayerKickEvent.Reason.NAME_BANNED, "Banned by admin");
+            this.kick(PlayerKickEvent.Reason.NAME_BANNED, "あなたはBANされました\nBanned by admin");
         } else {
             this.server.getNameBans().remove(this.getName());
         }
@@ -1404,34 +1404,6 @@ public class Player extends EntityHuman implements CommandSender, InventoryHolde
             if (diffY >= -yS || diffY <= yS) {
                 diffY = 0;
             }
-
-            if (diffX != 0 || diffY != 0 || diffZ != 0) {
-                if (this.checkMovement && !server.getAllowFlight() && this.isSurvival()) {
-                    // Some say: I cant move my head when riding because the server
-                    // blocked my movement
-                    if (!this.isSleeping() && this.riding == null) {
-                        double diffHorizontalSqr = (diffX * diffX + diffZ * diffZ) / ((double) (tickDiff * tickDiff));
-                        if (diffHorizontalSqr > 0.125) {
-                            PlayerInvalidMoveEvent ev;
-                            this.getServer().getPluginManager().callEvent(ev = new PlayerInvalidMoveEvent(this, true));
-                            if (!ev.isCancelled()) {
-                                revert = ev.isRevert();
-
-                                if (revert) {
-                                    this.server.getLogger().warning(this.getServer().getLanguage().translateString("nukkit.player.invalidMove", this.getName()));
-                                }
-                            }
-                        }
-                    }
-                }
-
-
-                this.x = newPos.x;
-                this.y = newPos.y;
-                this.z = newPos.z;
-                double radius = this.getWidth() / 2;
-                this.boundingBox.setBounds(this.x - radius, this.y, this.z - radius, this.x + radius, this.y + this.getHeight(), this.z + radius);
-            }
         }
 
         Location from = new Location(
@@ -1773,14 +1745,14 @@ public class Player extends EntityHuman implements CommandSender, InventoryHolde
 
     protected void processLogin() {
         if (!this.server.isWhitelisted((this.getName()).toLowerCase())) {
-            this.kick(PlayerKickEvent.Reason.NOT_WHITELISTED, "Server is white-listed");
+            this.kick(PlayerKickEvent.Reason.NOT_WHITELISTED, "サーバーがホワイトリスト制になっています\nServer is white-listed");
 
             return;
         } else if (this.isBanned()) {
-            this.kick(PlayerKickEvent.Reason.NAME_BANNED, "You are banned");
+            this.kick(PlayerKickEvent.Reason.NAME_BANNED, "あなたはBANされています\nYou are banned");
             return;
         } else if (this.server.getIPBans().isBanned(this.getAddress())) {
-            this.kick(PlayerKickEvent.Reason.IP_BANNED, "You are banned");
+            this.kick(PlayerKickEvent.Reason.IP_BANNED, "あなたはBANされています\nYou are banned");
             return;
         }
 
@@ -1793,12 +1765,12 @@ public class Player extends EntityHuman implements CommandSender, InventoryHolde
 
         for (Player p : new ArrayList<>(this.server.getOnlinePlayers().values())) {
             if (p != this && p.getName() != null && p.getName().equalsIgnoreCase(this.getName())) {
-                if (!p.kick(PlayerKickEvent.Reason.NEW_CONNECTION, "logged in from another location")) {
+                if (!p.kick(PlayerKickEvent.Reason.NEW_CONNECTION, "あなたと同じ名前でログインしている人がいます")) {
                     this.close(this.getLeaveMessage(), "Already connected");
                     return;
                 }
             } else if (p.loggedIn && this.getUniqueId().equals(p.getUniqueId())) {
-                if (!p.kick(PlayerKickEvent.Reason.NEW_CONNECTION, "logged in from another location")) {
+                if (!p.kick(PlayerKickEvent.Reason.NEW_CONNECTION, "あなたと同じ名前でログインしようとしている人がいます")) {
                     this.close(this.getLeaveMessage(), "Already connected");
                     return;
                 }
