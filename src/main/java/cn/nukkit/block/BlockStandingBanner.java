@@ -18,15 +18,29 @@ public class BlockStandingBanner extends BlockSolid {
     public BlockStandingBanner(int meta) {
         super(meta);
     }
+	
 
     @Override
     public int getId() {
         return STANDING_BANNER;
     }
+	
+    public BlockStandingBanner(DyeColor dyeColor) {
+        this(dyeColor.getWoolData());
+    }
 
     @Override
     public String getName() {
-        return "Standing Banner";
+        return getDyeColor().getName() + " Standing Banner";
+    }
+	
+    @Override
+    public BlockColor getColor() {
+        return DyeColor.getByWoolData(meta).getColor();
+    }
+
+    public DyeColor getDyeColor() {
+        return DyeColor.getByWoolData(meta);
     }
 
     @Override

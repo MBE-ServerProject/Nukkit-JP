@@ -24,9 +24,22 @@ public class BlockWallBanner extends BlockSolid {
         return WALL_BANNER;
     }
 
+    public BlockWallBanner(DyeColor dyeColor) {
+        this(dyeColor.getWoolData());
+    }
+
     @Override
     public String getName() {
-        return "Wall Banner";
+        return getDyeColor().getName() + " Wall Banner";
+    }
+	
+    @Override
+    public BlockColor getColor() {
+        return DyeColor.getByWoolData(meta).getColor();
+    }
+
+    public DyeColor getDyeColor() {
+        return DyeColor.getByWoolData(meta);
     }
 
     @Override
