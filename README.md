@@ -95,8 +95,8 @@ Build JAR file（jarファイルの生成方法）
 1. このリポジトリをCloneします。
 1. Cloneしたフォルダのパスで、以下のコマンドを順に入力していきます。
 	1. `git submodule update --init`
-	1. `mvn clean`
-	1. `mvn package`
+	2. `mvn clean`
+	3. `mvn package`
 
 
 Running（実行）
@@ -107,12 +107,12 @@ Simply run `start.sh` or `start.cmd`, or execute `java -jar Nukkit.jar`.
 
 * Windowsの場合
 	1. jarファイルのあるフォルダに`start.cmd`を作り、そこに`java -jar Nukkit.jar`と記述し保存します。
-	1. 作成した`start.cmd`を実行します。
+	2. 作成した`start.cmd`を実行します。
 * Linuxの場合
 	1. jarファイルのあるフォルダに`start.sh`を作り、そこに`java -jar Nukkit.jar`と記述し保存します。
-	1. 作成した`start.sh`を実行します。
+	2. 作成した`start.sh`を実行します。
 * その他・実行ファイルを使用しない場合
-	1. jarファイルのあるフォルダのパスで、`java -jar Nukkit.jar`というコマンドを実行します。
+	* jarファイルのあるフォルダのパスで、`java -jar Nukkit.jar`というコマンドを実行します。
 
 Plugin API（プラグインのAPI）
 -------------
