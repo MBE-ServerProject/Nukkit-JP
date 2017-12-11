@@ -15,14 +15,20 @@
 	You should have received a copy of the GNU Lesser General Public License
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+---------------------
 
-	このプログラムは誰でも無料で使用できるソフトウェアで、ベースとなるNukkitはGNUライセンス(Ver.3以降)のもと再配布したり変更することができます。
-	Nukkit-JPは、Nukkit同様に変更しての再配布・使用が認められます。ただし、変更を施し再配布する際はNukkit-JPをベースにした旨を明記するようにしてください。
+	このプログラムは誰でも無料で使用できるソフトウェアで、ベースとなるNukkitは
+	GNUライセンス(Ver.3以降)のもと再配布したり変更することができます。
+	Nukkit-JPは、Nukkit同様に変更しての再配布・使用が認められます。
+	ただし、変更を施し再配布する際はNukkit-JPをベースにした旨を明記するようにしてください。
 	なお、変更を施すことなく再配布することは本物との区別をつけるため禁止させていただきます。
 
-	このプログラムは使用する皆さんにとって有用であることを願って配布されており、いかなる保証もありません。保証がないという記載が他の配布先にないとしても、商品性などを保証するものはありません。詳細については、GNU Lesser General Public Licenseを参照してください。
+	このプログラムは使用する皆さんにとって有用であることを願って配布されており、いかなる保証もありません。
+	保証がないという記載が他の配布先にないとしても、商品性などを保証するものはありません。
+	詳細については、GNU Lesser General Public Licenseを参照してください。
 
-	このプログラムには通常、GNU Lesser General Public Licenseのコピーが含まれています。配布先により含まれていない場合は、<http://www.gnu.org/licenses/>を参照してください。
+	このプログラムには通常、GNU Lesser General Public Licenseのコピーが含まれています。
+	配布先により含まれていない場合は、<http://www.gnu.org/licenses/>を参照してください。
 
 __A Nuclear-Powered Server Software For Minecraft: Pocket Edition__
 
@@ -44,6 +50,7 @@ It has a few key advantages over other server software:
 
 Nukkit and Nukkit-JP is **under improvement** yet, we welcome contributions. 
 
+----------------
 
 Nukkit（Nukkit-JP）は原始的なMinecraft: Bedrock Edition向けのサーバーソフトウェアです。
 Nukkit-JPには他のどのサーバーソフトウェアよりも優れた大きな長所があります。
@@ -83,6 +90,8 @@ Build JAR file（jarファイルの生成方法）
 - `mvn clean`
 - `mvn package`
 
+-------------
+
 1. このリポジトリをCloneします。
 1. Cloneしたフォルダのパスで、以下のコマンドを順に入力していきます。
 	1. `git submodule update --init`
@@ -93,6 +102,8 @@ Build JAR file（jarファイルの生成方法）
 Running（実行）
 -------------
 Simply run `start.sh` or `start.cmd`, or execute `java -jar Nukkit.jar`.
+
+--------------------
 
 * Windowsの場合
 	1. jarファイルのあるフォルダに`start.cmd`を作り、そこに`java -jar Nukkit.jar`と記述し保存します。
@@ -122,6 +133,8 @@ Nukkit（Nukkit-JP）使用者向けの開発ツールです。
 Contributing（開発協力）
 ------------
 Please read the [CONTRIBUTING](https://github.com/Nukkit/Nukkit/blob/jp/.github/CONTRIBUTING.md) guide before submitting any issue. Issues with insufficient information or in the wrong format will be closed and will not be reviewed.
+
+--------------------
 
 [こちら](https://github.com/Nukkit/Nukkit/blob/jp/.github/CONTRIBUTING.md) を参照してバグなどの報告をお願いいたします。なお、不十分な情報だけの報告は参考にすることができません。ご了承ください。
 
