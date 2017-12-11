@@ -57,28 +57,8 @@ public class BlockTrapdoorIron extends BlockTrapdoor {
     }
 
     @Override
-    public boolean onActivate(Item item, Player player) {
-        return false;
-    }
-
-    @Override
-    public double getHardness() {
-        return 3;
-    }
-
-    @Override
-    public double getResistance() {
-        return 15;
-    }
-
-    @Override
     public boolean canBeActivated() {
         return true;
-    }
-
-    @Override
-    public int getToolType() {
-        return ItemTool.TYPE_AXE;
     }
 
     @Override
@@ -202,11 +182,6 @@ public class BlockTrapdoorIron extends BlockTrapdoor {
         this.getLevel().setBlock(this, this, true);
         this.level.addSound(new DoorSound(this));
         return true;
-    }
-
-    @Override
-    public BlockColor getColor() {
-        return BlockColor.WOOD_BLOCK_COLOR;
     }
 
     public boolean toggle(Player player) {
