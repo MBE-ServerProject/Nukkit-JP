@@ -49,6 +49,60 @@ public class BlockWallBanner extends BlockTransparent {
         return 30;
     }
 
+    @Override
+    public boolean place(Item item, Block block, Block target, BlockFace face, double fx, double fy, double fz, Player player) {
+        if (face != BlockFace.DOWN) {
+            CompoundTag nbt = new CompoundTag()
+                    .putString("id", BlockEntity.STANDING_BANNER)
+                    .putInt("x", (int) block.x)
+                    .putInt("y", (int) block.y)
+                    .putInt("z", (int) block.z)
+                    .putByte("color", item.getDamage());
+
+            if (face == BlockFace.UP) {
+                meta = (int) Math.floor(((player.yaw + 180) * 16 / 360) + 0.5) & 0x0f;
+                getLevel().setBlock(block, new BlockSignPost(meta), true);
+            } else {
+                meta = face.getIndex();
+                getLevel().setBlock(block, new BlockWallSign(meta), true);
+            }
+
+            if (player != null) {
+                nbt.putString("Creator", player.getUniqueId().toString());
+            }
+
+            if (item.hasCustomBlockData()) {
+                for (Tag aTag : item.getCustomBlockData().getAllTags()) {
+                    nbt.put(aTag.getName(), aTag);
+                }
+            }
+
+            new BlockEntitySign(getLevel().getChunk((int) block.x >> 4, (int) block.z >> 4), nbt);
+
+            return true;
+        }
+
+        return false;
+    }
+
+    @Override
+    public int onUpdate(int type) {
+        int[] faces = {
+                3,
+                2,
+                5,
+                4,
+        };
+        if (type == Level.BLOCK_UPDATE_NORMAL) {
+            if (this.meta >= 2 && this.meta <= 5) {
+                if (this.getSide(BlockFace.fromIndex(faces[this.meta - 2])).getId() == Item.AIR) {
+                    this.getLevel().useBreakOn(this);
+                }
+                return Level.BLOCK_UPDATE_NORMAL;
+            }
+        }
+        return 0;
+    }
 
     @Override
     public boolean canHarvestWithHand() {
