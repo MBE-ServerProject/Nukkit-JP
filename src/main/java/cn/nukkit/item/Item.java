@@ -547,6 +547,7 @@ public class Item implements Cloneable {
     public static final int ELYTRA = 444;
 
     public static final int SHULKER_SHELL = 445;
+    public static final int BANNER = 446;
 
     public static final int BEETROOT = 457;
     public static final int BEETROOT_SEEDS = 458;
@@ -556,7 +557,6 @@ public class Item implements Cloneable {
     public static final int CLOWNFISH = 461;
     public static final int PUFFERFISH = 462;
     public static final int COOKED_SALMON = 463;
-
     public static final int GOLDEN_APPLE_ENCHANTED = 466;
 
     public static final int RECORD_13 = 500;
