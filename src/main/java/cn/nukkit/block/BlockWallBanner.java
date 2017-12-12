@@ -66,7 +66,7 @@ public class BlockWallBanner extends BlockTransparent {
                     .putInt("x", (int) block.x)
                     .putInt("y", (int) block.y)
                     .putInt("z", (int) block.z)
-                    .putByte("color", getColor());
+                    .putByte("color", getDyeColor());
 
             if (face == BlockFace.UP) {
                 meta = (int) Math.floor(((player.yaw + 180) * 16 / 360) + 0.5) & 0x0f;
