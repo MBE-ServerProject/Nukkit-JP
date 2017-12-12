@@ -62,7 +62,7 @@ public class BlockStandingBanner extends BlockTransparent {
     @Override
     public int onUpdate(int type) {
         if (type == Level.BLOCK_UPDATE_NORMAL) {
-            if (this.getSide(BlockFace.DOWN) == Item.AIR) {
+            if (this.getSide(BlockFace.DOWN).getId() == Item.AIR) {
                 this.getLevel().useBreakOn(this);
             }
             return Level.BLOCK_UPDATE_NORMAL;
