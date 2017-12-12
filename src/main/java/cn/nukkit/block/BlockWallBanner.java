@@ -1,7 +1,16 @@
 package cn.nukkit.block;
 
+import cn.nukkit.Player;
+import cn.nukkit.block.BlockStandingBanner;
+import cn.nukkit.blockentity.BlockEntity;
+import cn.nukkit.blockentity.BlockEntityBanner;
 import cn.nukkit.item.Item;
 import cn.nukkit.item.ItemTool;
+import cn.nukkit.level.Level;
+import cn.nukkit.math.AxisAlignedBB;
+import cn.nukkit.math.BlockFace;
+import cn.nukkit.nbt.tag.CompoundTag;
+import cn.nukkit.nbt.tag.Tag;
 import cn.nukkit.utils.BlockColor;
 import cn.nukkit.utils.DyeColor;
 
@@ -61,23 +70,13 @@ public class BlockWallBanner extends BlockTransparent {
 
             if (face == BlockFace.UP) {
                 meta = (int) Math.floor(((player.yaw + 180) * 16 / 360) + 0.5) & 0x0f;
-                getLevel().setBlock(block, new BlockSignPost(meta), true);
+                getLevel().setBlock(block, new BlockStandingBanner(meta), true);
             } else {
                 meta = face.getIndex();
-                getLevel().setBlock(block, new BlockWallSign(meta), true);
+                getLevel().setBlock(block, new BlockWallBanner(meta), true);
             }
 
-            if (player != null) {
-                nbt.putString("Creator", player.getUniqueId().toString());
-            }
-
-            if (item.hasCustomBlockData()) {
-                for (Tag aTag : item.getCustomBlockData().getAllTags()) {
-                    nbt.put(aTag.getName(), aTag);
-                }
-            }
-
-            new BlockEntitySign(getLevel().getChunk((int) block.x >> 4, (int) block.z >> 4), nbt);
+            new BlockEntityBanner(getLevel().getChunk((int) block.x >> 4, (int) block.z >> 4), nbt);
 
             return true;
         }

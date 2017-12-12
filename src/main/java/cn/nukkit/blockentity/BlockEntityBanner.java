@@ -35,7 +35,7 @@ public abstract class BlockEntityBanner extends BlockEntitySpawnable {
     @Override
     public boolean isBlockEntityValid() {
         //return this.level.getBlockIdAt(this.getFloorX(), this.getFloorY(), this.getFloorZ()) == Block.BANNER;
-        return getBlock().getId() = Block.STANDING_BANNER || getBlock().getId() = Block.WALL_BANNER;
+        return getBlock().getId() == Block.STANDING_BANNER || getBlock().getId() == Block.WALL_BANNER;
     }
 
     @Override
@@ -45,7 +45,7 @@ public abstract class BlockEntityBanner extends BlockEntitySpawnable {
                 .putInt("x", (int) this.x)
                 .putInt("y", (int) this.y)
                 .putInt("z", (int) this.z)
-                .putString("color", this.color);
+                .putByte("color", this.color);
     }
 
 	public DyeColor getDyeColor() {
