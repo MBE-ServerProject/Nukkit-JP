@@ -9,7 +9,7 @@ import cn.nukkit.utils.DyeColor;
  * author: meare
  * NukkitJP Project
  */
-public class BlockStandingBanner extends BlockSolid {
+public class BlockStandingBanner extends BlockTransparent {
 
 
     public BlockStandingBanner() {

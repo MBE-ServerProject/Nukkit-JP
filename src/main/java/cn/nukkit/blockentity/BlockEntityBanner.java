@@ -7,7 +7,7 @@ import cn.nukkit.level.format.FullChunk;
 import cn.nukkit.nbt.tag.CompoundTag;
 import cn.nukkit.utils.DyeColor;
 
-public class BlockEntityBed extends BlockEntitySpawnable {
+public class BlockEntityBanner extends BlockEntitySpawnable {
 
     public int color;
 	
