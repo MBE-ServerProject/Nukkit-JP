@@ -5,6 +5,7 @@ import cn.nukkit.block.BlockStandingBanner;
 import cn.nukkit.blockentity.BlockEntity;
 import cn.nukkit.blockentity.BlockEntityBanner;
 import cn.nukkit.item.Item;
+import cn.nukkit.item.ItemBanner;
 import cn.nukkit.item.ItemTool;
 import cn.nukkit.level.Level;
 import cn.nukkit.math.AxisAlignedBB;
