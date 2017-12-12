@@ -71,6 +71,11 @@ public class BlockStandingBanner extends BlockTransparent {
     }
 
     @Override
+    public Item toItem() {
+        return new ItemBanner(this.meta);
+    }
+
+    @Override
     public BlockColor getColor() {
         return DyeColor.getByWoolData(meta).getColor();
     }
