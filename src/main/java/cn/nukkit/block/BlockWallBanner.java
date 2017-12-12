@@ -87,14 +87,15 @@ public class BlockWallBanner extends BlockTransparent {
     @Override
     public int onUpdate(int type) {
         int[] faces = {
-                3,
-                2,
-                5,
-                4,
+            2,
+            3,
+            4,
+            5,
+            6
         };
         if (type == Level.BLOCK_UPDATE_NORMAL) {
-            if (this.meta >= 2 && this.meta <= 5) {
-                if (this.getSide(BlockFace.fromIndex(faces[this.meta - 2])).getId() == Item.AIR) {
+            if (this.meta >= 1 && this.meta <= 5) {
+                if (this.getSide(BlockFace.fromIndex(faces[this.meta])).getId() == Item.AIR) {
                     this.getLevel().useBreakOn(this);
                 }
                 return Level.BLOCK_UPDATE_NORMAL;

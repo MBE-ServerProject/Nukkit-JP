@@ -1,6 +1,7 @@
 package cn.nukkit.item;
 
 import cn.nukkit.block.BlockWallBanner;
+import cn.nukkit.utils.DyeColor;
 
 /**
  * author: MagicDroidX
@@ -17,7 +18,7 @@ public class ItemBanner extends Item {
     }
 
     public ItemBanner(Integer meta, int count) {
-        super(BANNER, 0, count, "Banner");
+        super(BANNER, meta, count, DyeColor.getByWoolData(meta).getName() + " Banner");
         this.block = new BlockWallBanner();
     }
 
