@@ -62,7 +62,7 @@ public class BlockWallBanner extends BlockTransparent {
     public boolean place(Item item, Block block, Block target, BlockFace face, double fx, double fy, double fz, Player player) {
         if (face != BlockFace.DOWN) {
             CompoundTag nbt = new CompoundTag()
-                    .putString("id", BlockEntity.STANDING_BANNER)
+                    .putString("id", BlockEntity.BANNER)
                     .putInt("x", (int) block.x)
                     .putInt("y", (int) block.y)
                     .putInt("z", (int) block.z)

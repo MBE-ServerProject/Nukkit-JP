@@ -7,7 +7,11 @@ import cn.nukkit.level.format.FullChunk;
 import cn.nukkit.nbt.tag.CompoundTag;
 import cn.nukkit.utils.DyeColor;
 
-public abstract class BlockEntityBanner extends BlockEntitySpawnable {
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+public class BlockEntityBanner extends BlockEntitySpawnable {
 
     public int color;
 
