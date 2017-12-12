@@ -19,26 +19,26 @@ public class BlockStandingBanner extends BlockTransparent {
     public BlockStandingBanner(int meta) {
         super(meta);
     }
-	
-	public BlockStandingBanner(DyeColor dyeColor) {
-		this(dyeColor.getWoolData());
+
+    public BlockStandingBanner(DyeColor dyeColor) {
+        this(dyeColor.getWoolData());
     }
 
-	@Override
+    @Override
     public String getName() {
         return getDyeColor().getName() + " Standing Banner";
     }	
-	
+
     @Override
     public int getId() {
         return STANDING_BANNER;
     }
-	
+
     @Override
     public int getToolType() {
         return ItemTool.TYPE_AXE;
     }		
-	
+
     @Override
     public double getHardness() {
         return 3;
@@ -54,8 +54,19 @@ public class BlockStandingBanner extends BlockTransparent {
     public boolean canHarvestWithHand() {
         return false;
     }
-	
-	@Override
+
+    @Override
+    public int onUpdate(int type) {
+        if (type == Level.BLOCK_UPDATE_NORMAL) {
+            if (this.getSide(BlockFace.DOWN) == Item.AIR) {
+                this.getLevel().useBreakOn(this);
+            }
+            return Level.BLOCK_UPDATE_NORMAL;
+        }
+        return 0;
+    }
+
+    @Override
     public BlockColor getColor() {
         return DyeColor.getByWoolData(meta).getColor();
     }

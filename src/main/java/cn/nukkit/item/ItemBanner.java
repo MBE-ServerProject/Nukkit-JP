@@ -19,7 +19,7 @@ public class ItemBanner extends Item {
 
     public ItemBanner(Integer meta, int count) {
         super(BANNER, meta, count, DyeColor.getByWoolData(meta).getName() + " Banner");
-        this.block = new BlockWallBanner(meta);
+        this.block = new BlockWallBanner(DyeColor.getByWoolData(meta).getWoolData());
     }
 
     @Override
