@@ -29,26 +29,26 @@ public class BlockWallBanner extends BlockTransparent {
     public BlockWallBanner(int meta) {
         super(meta);
     }
-	
-	public BlockWallBanner(DyeColor dyeColor) {
-		this(dyeColor.getWoolData());
+
+    public BlockWallBanner(DyeColor dyeColor) {
+        this(dyeColor.getWoolData());
     }
 
-	@Override
+    @Override
     public String getName() {
         return getDyeColor().getName() + " Wall Banner";
     }	
-	
+
     @Override
     public int getId() {
         return WALL_BANNER;
     }
-	
+
     @Override
     public int getToolType() {
         return ItemTool.TYPE_AXE;
     }		
-	
+
     @Override
     public double getHardness() {
         return 3;
@@ -63,11 +63,11 @@ public class BlockWallBanner extends BlockTransparent {
     public boolean place(Item item, Block block, Block target, BlockFace face, double fx, double fy, double fz, Player player) {
         if (face != BlockFace.DOWN) {
             CompoundTag nbt = new CompoundTag()
-                    .putString("id", BlockEntity.BANNER)
-                    .putInt("x", (int) block.x)
-                    .putInt("y", (int) block.y)
-                    .putInt("z", (int) block.z)
-                    .putByte("color", item.getDamage() & 0x04);
+            .putString("id", BlockEntity.BANNER)
+            .putInt("x", (int) block.x)
+            .putInt("y", (int) block.y)
+            .putInt("z", (int) block.z)
+            .putByte("color", item.getDamage() & 0x04);
 
             if (face == BlockFace.UP) {
                 meta = (int) Math.floor(((player.yaw + 180) * 16 / 360) + 0.5) & 0x0f;
@@ -107,9 +107,8 @@ public class BlockWallBanner extends BlockTransparent {
     @Override
     public Item[] getDrops(Item item) {
         int damage = this.getDamage();
-            Item drop = this.toItem();
-            drop.setDamage(drop.getDamage() & this.meta)
-        }
+        Item drop = this.toItem();
+        drop.setDamage(drop.getDamage() & this.meta);
         return new Item[0];
     }
 
@@ -117,8 +116,8 @@ public class BlockWallBanner extends BlockTransparent {
     public boolean canHarvestWithHand() {
         return false;
     }
-	
-	  @Override
+
+    @Override
     public BlockColor getColor() {
         return DyeColor.getByWoolData(meta).getColor();
     }
