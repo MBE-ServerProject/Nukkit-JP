@@ -67,7 +67,7 @@ public class BlockWallBanner extends BlockTransparent {
                     .putInt("x", (int) block.x)
                     .putInt("y", (int) block.y)
                     .putInt("z", (int) block.z)
-                    .putByte("color", item.getDamage());
+                    .putByte("color", item.getDamage() & 0x04);
 
             if (face == BlockFace.UP) {
                 meta = (int) Math.floor(((player.yaw + 180) * 16 / 360) + 0.5) & 0x0f;
@@ -90,8 +90,8 @@ public class BlockWallBanner extends BlockTransparent {
         int[] faces = {
             3,
             2,
+            5,
             4,
-            5
         };
         if (type == Level.BLOCK_UPDATE_NORMAL) {
             if (this.meta >= 2 && this.meta <= 5) {
@@ -105,8 +105,12 @@ public class BlockWallBanner extends BlockTransparent {
     }
 
     @Override
-    public Item toItem() {
-        return new ItemBanner(this.meta);
+    public Item[] getDrops(Item item) {
+        int damage = this.getDamage();
+            Item drop = this.toItem();
+            drop.setDamage(drop.getDamage() & this.meta)
+        }
+        return new Item[0];
     }
 
     @Override
