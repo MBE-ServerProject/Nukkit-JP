@@ -68,7 +68,7 @@ public class BlockWallBanner extends BlockTransparent {
             .putInt("y", (int) block.y)
             .putInt("z", (int) block.z)
             .putByte("color", item.getDamage() & meta);
-            setDamage(item.getDamage());
+            //this.setDamage(item.getDamage());
             if (face == BlockFace.UP) {
                 meta = (int) Math.floor(((player.yaw + 180) * 16 / 360) + 0.5) & 0x0f;
                 getLevel().setBlock(block, new BlockStandingBanner(meta), true);
@@ -108,7 +108,7 @@ public class BlockWallBanner extends BlockTransparent {
     public Item[] getDrops(Item item) {
         int damage = this.getDamage();
         Item drop = this.toItem();
-        drop.setDamage(this.getDamage());
+        drop.setDamage(this.tag.get("color"));
         return new Item[0];
     }
 
