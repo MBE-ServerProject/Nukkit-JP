@@ -18,11 +18,11 @@ public class BlockEntityBed extends BlockEntitySpawnable {
 
     @Override
     protected void initBlockEntity() {
-        if (!this.namedTag.contains("color")) {
-            this.namedTag.putByte("color", 0);
+        if (!this.namedTag.contains("Color")) {
+            this.namedTag.putByte("Color", 0);
         }
 
-        this.color = this.namedTag.getByte("color");
+        this.color = this.namedTag.getByte("Color");
 
         super.initBlockEntity();
     }
@@ -35,7 +35,7 @@ public class BlockEntityBed extends BlockEntitySpawnable {
     @Override
     public void saveNBT() {
         super.saveNBT();
-        this.namedTag.putByte("color", this.color);
+        this.namedTag.putByte("Color", this.color);
     }
 
     @Override
@@ -45,7 +45,7 @@ public class BlockEntityBed extends BlockEntitySpawnable {
                 .putInt("x", (int) this.x)
                 .putInt("y", (int) this.y)
                 .putInt("z", (int) this.z)
-                .putByte("color", this.color);
+                .putByte("Color", this.color);
     }
 
     public DyeColor getDyeColor() {

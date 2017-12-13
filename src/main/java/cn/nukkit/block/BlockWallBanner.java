@@ -108,7 +108,7 @@ public class BlockWallBanner extends BlockTransparent {
     public Item[] getDrops(Item item) {
         int damage = this.getDamage();
         Item drop = this.toItem();
-        drop.setDamage(this.tag.get("color"));
+        drop.setDamage(this.meta.getByte("Color"));
         return new Item[0];
     }
 
